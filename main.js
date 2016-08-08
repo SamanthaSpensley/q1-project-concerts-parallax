@@ -45,8 +45,8 @@ $(document).ready(function(){
           for (var i =0; i < data.length; i++) {
 
                 $($row).append(
-                  $('<div/>', {'class': 'col s12 m4'}).append(
-                    $('<div/>', {'class': 'card'}).append(
+                  $('<div/>', {'class': 'col s12 m6 l4'}).append(
+                    $('<div/>', {'class': 'card large'}).append(
                       $('<div/>', {'class': 'card-image'}).append(
                         $('<img/>', {src: data[i].artists[0].thumb_url})
                       )
