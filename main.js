@@ -4,11 +4,20 @@ $(document).ready(function(){
 
   $('.new-search').hide();
   $('.new-search').on('click', function() {
-    location.reload();
+    smoothScroll.animateScroll('#userInput');
+    $('.new-search').hide();
+    // location.reload();
   })
 
+  $("#location").keyup(function(event){
+    if(event.keyCode == 13){
+        $("#getResults").click();
+    }
+});
+
   $('form').submit(function(event){
-    event.preventDefault();
+    smoothScroll.animateScroll('#display');
+    // event.preventDefault();
 
     var artist = $("#artist").val();
     var location = $("#location").val();
@@ -21,16 +30,18 @@ $(document).ready(function(){
         if (data === undefined || data.length === 0) {
           $('#dataContainer').append($('<p>', {'class': 'flow-text', text: "Unfortunately there are no upcoming shows related to " + artist + " near " + location}));
         }
-        
+
         else {
           var $displayTitle = $('<p>').text('Concerts related to ' + artist + ' near ' + location + ':');
           $('#display').append($displayTitle)
 
+          var $row = $('<div/>', {'class': 'row'})
+          $('#dataContainer').append($row);
+
           for (var i =0; i < data.length; i++) {
 
-            $('#dataContainer').append(
-                $('<div/>', {'class': 'row'}).append(
-                  $('<div/>', {'class': 'col s12 m5'}).append(
+                $($row).append(
+                  $('<div/>', {'class': 'col s12 m4'}).append(
                     $('<div/>', {'class': 'card'}).append(
                       $('<div/>', {'class': 'card-image'}).append(
                         $('<img/>', {src: data[i].artists[0].thumb_url})
@@ -53,19 +64,19 @@ $(document).ready(function(){
                     )
                   )
               )
-            );
           }
         }
+      $('form')[0].reset();
 
 
       })
-      .catch(function (error) {
-        console.log('THIS IS AN ERROR');
-        var $locErrMsg = $('<p>');
-        $locErrMsg = $locErrMsg.text('We\'re sorry, Bebop doesn\'t recognize that location. Please try another location (ex. Denver, CO).');
-        $locErrMsg = $locErrMsg.attr('class', 'flow-text');
-        $('.errMsg').append($locErrMsg)
-      })
+      // .catch(function (error) {
+      //   console.log('THIS IS AN ERROR');
+      //   var $locErrMsg = $('<p>');
+      //   $locErrMsg = $locErrMsg.text('We\'re sorry, Bebop doesn\'t recognize that location. Please try another location (ex. Denver, CO).');
+      //   $locErrMsg = $locErrMsg.attr('class', 'flow-text');
+      //   $('.errMsg').append($locErrMsg)
+      // })
     })
 
 

@@ -49,20 +49,28 @@ h4 {
   font-weight: 100;
   padding: 0;
 }
+.card-content h6 {
+  font-weight: bold;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
 #userInput p {
   margin-top: 5vw;
 }
 .input-field .prefix.active {
   color: #26a69a;
 }
+#artist, #location {
+  font-size: 20px;
+}
 
 /* ----- Material Design Cards ----- */
 #display {
   display: flex;
 }
-#dataContainer {
-  flex-wrap: wrap;
-}
+/*#dataContainer {
+  display: flex;
+}*/
 .card:hover {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
