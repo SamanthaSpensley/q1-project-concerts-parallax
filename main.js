@@ -21,7 +21,7 @@ $(document).ready(function(){
 
     var artist = $("#artist").val();
     var location = $("#location").val();
-    var url = 'https://cors-anywhere.herokuapp.com/http://api.bandsintown.com/artists/' + artist + '/events/recommended?location=' + location + '&radius=150&app_id=concertgen&api_version=2.0&format=json';
+    var url = 'https://cors-anywhere.herokuapp.com/https://api.bandsintown.com/artists/' + artist + '/events/recommended?location=' + location + '&radius=150&app_id=concertgen&api_version=2.0&format=json';
 
     $.get(url)
       .then(function (data){
