@@ -6,6 +6,8 @@ $(document).ready(function(){
   $('.new-search').on('click', function() {
     smoothScroll.animateScroll('#userInput');
     $('.new-search').hide();
+    // $('#display').empty();
+    // $('#dataContainer').empty();
     // location.reload();
   })
 
@@ -16,6 +18,8 @@ $(document).ready(function(){
 });
 
   $('form').submit(function(event){
+    $('#display').empty();
+    $('#dataContainer').empty();
     smoothScroll.animateScroll('#display');
     // event.preventDefault();
 
