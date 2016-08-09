@@ -78,7 +78,7 @@ h4 {
 .btn:hover {
   background-color: #bdbdbd;
 }
-.new-search {
+/*.new-search {
   position: fixed;
   bottom: 0;
   right: 15px;
@@ -86,7 +86,7 @@ h4 {
   margin-right: 2vw;
   background-color: #697175;
   color: white;
-}
+}*/
 
 /* ----- Images ----- */
 
