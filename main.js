@@ -17,7 +17,7 @@ $(document).ready(function(){
     $('#display').empty();
     $('#dataContainer').empty();
     smoothScroll.animateScroll('#display');
-    // event.preventDefault();
+    event.preventDefault();
 
     var artist = $("#artist").val();
     var location = $("#location").val();
@@ -26,6 +26,7 @@ $(document).ready(function(){
     $.get(url)
       .then(function (data){
         $('.new-search').show();
+        $('#quote').hide();
 
         if (data === undefined || data.length === 0) {
           $('#dataContainer').append($('<p>', {'class': 'flow-text', text: "Unfortunately there are no upcoming shows related to " + artist + " near " + location}));
@@ -63,6 +64,7 @@ $(document).ready(function(){
                 )
               )
             )
+
           }
         }
 
