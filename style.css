@@ -1,7 +1,6 @@
 @import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro';
 /* ----- font-family: 'Source Sans Pro', sans-serif; ---- */
 
-
 /* ----- structure ----- */
 .parallax-container {
   display: flex;
@@ -67,9 +66,6 @@ h4 {
 #display {
   display: flex;
 }
-/*#dataContainer {
-  display: flex;
-}*/
 .card:hover {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
@@ -78,17 +74,6 @@ h4 {
 .btn:hover {
   background-color: #bdbdbd;
 }
-/*.new-search {
-  position: fixed;
-  bottom: 0;
-  right: 15px;
-  margin-bottom: 2vw;
-  margin-right: 2vw;
-  background-color: #697175;
-  color: white;
-}*/
-
-/* ----- Images ----- */
 
 /* ----- form ----- */
 input:-webkit-autofill {
